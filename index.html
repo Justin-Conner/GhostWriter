@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect</title>
+    <style>
+        #typing-container {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="typing-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const words = ["H", "He", "Hel", "Hell","Hello", "Hello ", "Hello W", "Hello Wo", "Hello Wor", "Hello Worl","Hello World"];
+            const typingSpeed = 200;
+            const container = document.getElementById("typing-container");
+
+            function typeWords(index) {
+                if (index < words.length) {
+                    container.textContent = words[index];
+                    setTimeout(function() {
+                        typeWords(index + 1);
+                    }, typingSpeed);
+                }
+            }
+
+            // Start typing effect
+            typeWords(0);
+        });
+    </script>
+</body>
+</html>
+
+
+    
